@@ -4,6 +4,7 @@ const mongodb = require('mongodb');
 const mongoose = require ('mongoose');
 
 const cors = require('cors');
+const { uri } = require('./config');
 
 const app = express();
 
@@ -12,10 +13,6 @@ const port = process.env.PORT?process.env.PORT:3000;
 
 app.use(express.json()); //Linea MUY importante para poder mandar info por metodo POST y que lo interprete como JSON (y lo pase al req.body)
 app.use(cors());
-
-/* Ahora agrego la función para usar el Mongo con el texto que teníamos del codigo*/
-/* mongodb+srv://roroldan:<password>@cluster0.08rce.mongodb.net/<dbname>?retryWrites=true&w=majority */
-const uri = "mongodb+srv://roroldan:132465Rodry@cluster0.08rce.mongodb.net/mislibros?retryWrites=true&w=majority";
 
 
 //Agrego la funcion para conectarme con el MONGO.
